@@ -1,6 +1,6 @@
 # StellarPass
 
-> **On-chain event ticket verification — anti-fraud, secure entry, and direct XLM payouts on Stellar Soroban.**
+> **On-chain event ticket verification — anti-fraud, secure entry, and direct XLM payouts on Stellar Soroban. (This is a placeholder project here -- will update this soon**
 
 ---
 
