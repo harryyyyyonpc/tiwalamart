@@ -1,12 +1,17 @@
 # TiwalaMart
 
-> **Trustless escrow payments for Southeast Asia — powered by Stellar Soroban.**
+> **Trustless escrow marketplace payments for Southeast Asia, powered by Stellar Soroban, where funds are securely locked and only released when transaction conditions are verified on-chain. TiwalaMart enables safe, transparent, and fraud-resistant peer-to-peer commerce without relying on intermediaries.**
 
 ---
 
+## To Do (remove this when done with project):
+- Add front end
+- Integrate Soroban
+- Edit READme.md
+
 ## Problem
 
-Online transactions in the Philippines and across Southeast Asia suffer from a fundamental lack of trust. Buyers routinely send payments upfront via e-wallets with no guarantee that goods will be delivered or services completed. The result is a cycle of scams, failed deliveries, unresolved disputes, and eroding confidence in digital commerce — especially in informal and peer-to-peer marketplaces.
+Online transactions in the Philippines and across Southeast Asia suffer from a fundamental lack of trust. Buyers routinely send payments upfront via e-wallets with no guarantee that goods will be delivered or services completed. The result is a cycle of scams, failed deliveries, unresolved disputes, and eroding confidence in digital commerce - especially in informal, online, and peer-to-peer marketplaces.
 
 ## Solution
 
