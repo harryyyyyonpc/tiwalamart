@@ -2,17 +2,17 @@
 
 > **Trustless escrow marketplace payments for Southeast Asia, powered by Stellar Soroban - funds are securely locked on-chain and only released when the buyer confirms delivery. No intermediaries. No manual overrides. Pure conditional settlement.**
 
-*"Tiwala"* means **trust** in Filipino — and that is exactly what this protocol delivers - for buyers to safely purchase goods knowing their funds are only released upon confirmed delivery.
+*"Tiwala"* means **trust** in Filipino - and that is exactly what this protocol delivers - for buyers to safely purchase goods knowing their funds are only released upon confirmed delivery.
 
 ---
 
 ## Problem
 
-Online transactions in the Philippines and across Southeast Asia suffer from a fundamental lack of trust. Buyers routinely send payments upfront via e-wallets with no guarantee that goods will be delivered or services completed. The result is a cycle of scams, failed deliveries, unresolved disputes, and eroding confidence in digital commerce — especially in informal, peer-to-peer marketplaces.
+Online transactions in the Philippines and across Southeast Asia suffer from a fundamental lack of trust. Buyers routinely send payments upfront via e-wallets with no guarantee that goods will be delivered or services completed. The result is a cycle of scams, failed deliveries, unresolved disputes, and eroding confidence in digital commerce - especially in informal, peer-to-peer marketplaces.
 
 ## Solution
 
-TiwalaMart is a **trustless escrow payment system** built on Stellar using Soroban smart contracts, with a full React frontend and Freighter wallet integration. Funds are locked on-chain the moment a buyer initiates a transaction. They are only released to the seller after the buyer confirms fulfillment — or refunded if the seller cannot deliver. Every state transition is enforced by contract logic and logged as an on-chain event.
+TiwalaMart is a **trustless escrow payment system** built on Stellar using Soroban smart contracts, with a full React frontend and Freighter wallet integration. Funds are locked on-chain the moment a buyer initiates a transaction. They are only released to the seller after the buyer confirms fulfillment - or refunded if the seller cannot deliver. Every state transition is enforced by contract logic and logged as an on-chain event.
 
 ---
 
@@ -20,7 +20,7 @@ TiwalaMart is a **trustless escrow payment system** built on Stellar using Sorob
 
 | Feature | Role in TiwalaMart |
 |---|---|
-| **Soroban Smart Contracts** | Core escrow logic — locking, releasing, refunding, state tracking |
+| **Soroban Smart Contracts** | Core escrow logic - locking, releasing, refunding, state tracking |
 | **XLM Transfers** | Locked payments and automatic settlement via the token client |
 | **Stellar Asset Contract (SAC)** | Native XLM used as the payment token via the wrapped SAC on testnet |
 | **Event Logs** | Real-time payment status events: `locked`, `released`, `refunded` |
@@ -45,7 +45,7 @@ Buyer  ──► confirm_delivery(tx_id, buyer)
                 │  status = Released
                 │  "released" event emitted
                 ▼
-           [OR — if something goes wrong]
+           [OR - if something goes wrong]
                 │
 Buyer/Seller ► refund_buyer(tx_id, caller)
                 │  funds transferred: contract → buyer
@@ -55,7 +55,7 @@ Buyer/Seller ► refund_buyer(tx_id, caller)
 
 ---
 
-## Smart Contract — Public Interface
+## Smart Contract - Public Interface
 
 ### `create_escrow`
 ```rust
@@ -155,11 +155,11 @@ The frontend is a React + Vite application with Tailwind CSS and shadcn/ui. It i
 
 | Page | Description |
 |---|---|
-| **HomePage** | Landing page — hero, features, how it works |
+| **HomePage** | Landing page - hero, features, how it works |
 | **WalletConnect** | Connect Freighter wallet; displays address and XLM balance |
 | **Marketplace** | Browse and buy listings from other sellers |
 | **CreateListing** | Create a new product or service listing |
-| **EscrowTransaction** | Full escrow flow — pay, track status, confirm delivery or request refund |
+| **EscrowTransaction** | Full escrow flow - pay, track status, confirm delivery or request refund |
 | **Dashboard** | View your listings and purchase history |
 
 ### Soroban Integration (`src/utils/soroban.ts`)
@@ -168,12 +168,12 @@ All contract interactions go through `soroban.ts`, which handles:
 
 - **Account fetching** via Horizon REST API for sequence numbers
 - **Transaction building** with `@stellar/stellar-sdk` `TransactionBuilder`
-- **Simulation** via direct Soroban RPC `simulateTransaction` — applies resource fees and `SorobanData` from sim result
-- **Auth injection** — sim-returned auth entries are injected into the raw XDR envelope when present; implicit source-account auth is preserved when sim returns none (critical for `confirm_delivery` across different accounts)
+- **Simulation** via direct Soroban RPC `simulateTransaction` - applies resource fees and `SorobanData` from sim result
+- **Auth injection** - sim-returned auth entries are injected into the raw XDR envelope when present; implicit source-account auth is preserved when sim returns none (critical for `confirm_delivery` across different accounts)
 - **Signing** via Freighter's `signTransaction`
 - **Submission** via Soroban RPC `sendTransaction`
 - **Polling** with `getTransaction` until `SUCCESS` or `FAILED`
-- **Return value parsing** — parses the `u64` escrow ID from `resultMetaXdr` after `create_escrow` so each purchase gets its correct on-chain ID
+- **Return value parsing** - parses the `u64` escrow ID from `resultMetaXdr` after `create_escrow` so each purchase gets its correct on-chain ID
 
 ---
 
@@ -232,7 +232,7 @@ tiwalamart/
   ```bash
   npm install -g pnpm
   ```
-- **Freighter Wallet** browser extension — [freighter.app](https://freighter.app)
+- **Freighter Wallet** browser extension - [freighter.app](https://freighter.app)
 
 ---
 
@@ -272,7 +272,7 @@ soroban contract deploy \
   --source alice \
   --network testnet
 
-# Save the returned CONTRACT_ID — you need it in .env
+# Save the returned CONTRACT_ID - you need it in .env
 ```
 
 ---
@@ -385,8 +385,8 @@ soroban contract invoke \
 
 ## Target Users
 
-- Online buyers and sellers in informal marketplaces (Carousell, Facebook Marketplace, etc.)
-- Freelance service providers — design, dev, tutoring, delivery
+- Online buyers and sellers in online marketplaces (Carousell, Facebook Marketplace, etc.)
+- Freelance service providers - design, dev, tutoring, delivery
 - Small businesses transacting across PH, VN, ID
 - Any two parties needing conditional settlement without a middleman
 
