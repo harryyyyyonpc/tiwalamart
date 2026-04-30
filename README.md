@@ -392,6 +392,21 @@ soroban contract invoke \
 
 ---
 
+## Project Demo (Screenshots)
+1. Wallet Connected State
+![Wallet Connected State](demo_screenshots/wallet_connected.png)
+
+2. Balance Displayed
+![Balance Displayed](demo_screenshots/balance_displayed.png)
+   
+3. Successful Testnet Transaction
+![Successful Testnet Transaction](demo_screenshots/successful_transaction.png)
+
+4. Transaction result shown to the user
+![Transaction result shown to the user](demo_screenshots/transaction_displayed.png)
+
+---
+
 ## Reference
 
 - Stellar Bootcamp 2026: https://github.com/armlynobinguar/Stellar-Bootcamp-2026
